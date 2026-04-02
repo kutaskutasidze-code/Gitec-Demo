@@ -1,0 +1,14 @@
+js/config.js
+.env
+.DS_Store
+node_modules
+backend/node_modules
+backend/.env
+backend/data/users.json
+backend/data/cart_items.json
+backend/data/wishlist_items.json
+backend/data/orders.json
+backend/data/order_items.json
+backend/data/contact_messages.json
+backend/data/newsletter_subscribers.json
+backend/data/password_resets.json

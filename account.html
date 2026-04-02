@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>if(localStorage.getItem('gitec_lang')==='ge')document.documentElement.className='lang-ge';</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>My Account — GITEC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .account-layout { max-width: 900px; margin: 0 auto 48px; }
+    .account-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .account-header h1 { font-family: var(--font-display); font-size: 28px; font-weight: 700; }
+    .btn-logout { padding: 10px 24px; background: var(--dark); color: #fff; border: none; border-radius: var(--radius); font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity .2s; }
+    .btn-logout:hover { opacity: 0.8; }
+    .account-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 24px; }
+    .account-card h2 { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .account-info { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .account-info-item label { display: block; font-size: 12px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .account-info-item span { font-size: 15px; color: var(--text); }
+    .order-row { display: grid; grid-template-columns: 80px 1fr 120px 100px 120px; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .order-row:last-child { border-bottom: none; }
+    .order-id { font-family: var(--font-display); font-weight: 600; }
+    .order-status { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: capitalize; }
+    .order-status.pending { background: #fef3c7; color: #92400e; }
+    .order-status.paid, .order-status.processing { background: #dbeafe; color: #1e40af; }
+    .order-status.shipped { background: #ede9fe; color: #5b21b6; }
+    .order-status.delivered { background: #d1fae5; color: #065f46; }
+    .order-status.cancelled { background: #fee2e2; color: #991b1b; }
+    .no-orders { text-align: center; padding: 40px 20px; color: var(--text-light); }
+    @media (max-width: 768px) {
+      .account-info { grid-template-columns: 1fr; }
+      .order-row { grid-template-columns: 1fr 1fr; gap: 8px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 032 291 34 56</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@gitec.ge</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.facebook.com/gitecltd" target="_blank">Facebook</a>
+        <div class="lang-switch"><a href="#" title="English">🇺🇸</a><a href="#" title="ქართული">🇬🇪</a></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">GI<span>TEC</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+      </div>
+      <div class="header-actions">
+        <a href="login.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Login / Register</span></a>
+        <div class="header-action-sep"></div>
+        <a href="wishlist.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Wishlist</span><span class="count">0</span></a>
+        <div class="header-action-sep"></div>
+        <a href="cart.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg><span>Cart</span><span class="count">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container">
+      <a href="category.html" class="nav-categories-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg> All Categories</a>
+      <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <div class="nav-menu"><button class="mobile-menu-close" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <a href="index.html">Home</a>
+        <a href="category.html#computers">Computers</a>
+        <a href="category.html#pc-components">PC Components</a>
+        <a href="category.html#notebooks">Notebooks</a>
+        <a href="category.html#monitors">Monitors</a>
+        <a href="category.html#audio">Audio</a>
+        <a href="category.html#keyboards-mice">Keyboards/Mice</a>
+        <a href="category.html#accessories">Accessories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <span>/</span> <span class="current">My Account</span>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding: 40px 0;">
+    <div class="container">
+      <div class="account-layout">
+
+        <div class="account-header">
+          <h1 id="account-greeting">My Account</h1>
+          <button class="btn-logout" id="btn-logout">Logout</button>
+        </div>
+
+        <div class="account-card">
+          <h2>Account Information</h2>
+          <div class="account-info" id="account-info">
+            <div class="account-info-item"><label>Full Name</label><span id="info-name">—</span></div>
+            <div class="account-info-item"><label>Email</label><span id="info-email">—</span></div>
+            <div class="account-info-item"><label>Phone</label><span id="info-phone">—</span></div>
+            <div class="account-info-item"><label>Date of Birth</label><span id="info-dob">—</span></div>
+            <div class="account-info-item"><label>Member Since</label><span id="info-since">—</span></div>
+          </div>
+        </div>
+
+        <div class="account-card">
+          <h2>Order History</h2>
+          <div id="orders-list">
+            <div class="no-orders">Loading...</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo">GI<span>TEC</span></a>
+          <p>Georgia's go-to destination for computer hardware, gaming systems, and professional tech.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 GITEC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js?v=5"></script>
+  <script>
+  (function() {
+    var API = window.GitecAPI;
+
+    // Wait for auth verification to complete
+    document.addEventListener('gitec-auth-ready', init);
+    // Also try immediately in case event already fired
+    if (API && API.isLoggedIn()) init();
+
+    var initialized = false;
+    function init() {
+      if (initialized) return;
+
+      // Not logged in? Redirect to login
+      if (!API || !API.isLoggedIn()) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      initialized = true;
+      var user = API.getCurrentUser();
+
+      // Fill account info
+      document.getElementById('account-greeting').textContent = 'Welcome, ' + (user.fullName || user.email);
+      document.getElementById('info-name').textContent = user.fullName || '—';
+      document.getElementById('info-email').textContent = user.email || '—';
+      document.getElementById('info-phone').textContent = user.phone || 'Not set';
+      document.getElementById('info-dob').textContent = user.dateOfBirth || 'Not set';
+      document.getElementById('info-since').textContent = user.createdAt ? new Date(user.createdAt).toLocaleDateString() : '—';
+
+      // Load orders
+      API.getOrders().then(function(data) {
+        var list = document.getElementById('orders-list');
+        if (!data.orders || data.orders.length === 0) {
+          list.innerHTML = '<div class="no-orders">No orders yet. <a href="category.html" style="color:var(--accent);">Start shopping</a></div>';
+          return;
+        }
+        var html = '';
+        data.orders.forEach(function(o) {
+          var date = new Date(o.createdAt).toLocaleDateString();
+          var itemCount = o.items ? o.items.length : 0;
+          html += '<div class="order-row">' +
+            '<div class="order-id">#' + o.id + '</div>' +
+            '<div>' + itemCount + ' item' + (itemCount !== 1 ? 's' : '') + ' — ' + date + '</div>' +
+            '<div>₾ ' + Number(o.total).toLocaleString() + '</div>' +
+            '<div><span class="order-status ' + o.status + '">' + o.status + '</span></div>' +
+            '<div>' + (o.paymentMethod || '').replace(/_/g, ' ') + '</div>' +
+          '</div>';
+        });
+        list.innerHTML = html;
+      }).catch(function() {
+        document.getElementById('orders-list').innerHTML = '<div class="no-orders">Failed to load orders</div>';
+      });
+
+      // Logout button
+      document.getElementById('btn-logout').addEventListener('click', function() {
+        API.logout().then(function() {
+          localStorage.removeItem('gitec_user');
+          window.location.href = 'index.html';
+        });
+      });
+    }
+  })();
+  </script>
+
+  <script src="js/config.example.js"></script>
+  <script src="js/chatbot.js?v=6"></script>
+</body>
+</html>

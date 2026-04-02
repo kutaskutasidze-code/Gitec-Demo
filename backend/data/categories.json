@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "slug": "graphics-cards",
+    "nameEn": "Graphics cards",
+    "nameGe": "ვიდეო ბარათები"
+  },
+  {
+    "id": 2,
+    "slug": "cases",
+    "nameEn": "Cases",
+    "nameGe": "კორპუსები"
+  },
+  {
+    "id": 3,
+    "slug": "cooling",
+    "nameEn": "Cooling",
+    "nameGe": "გაგრილება"
+  },
+  {
+    "id": 4,
+    "slug": "motherboards",
+    "nameEn": "Motherboards",
+    "nameGe": "დედაპლატები"
+  },
+  {
+    "id": 5,
+    "slug": "memory",
+    "nameEn": "Memory",
+    "nameGe": "მეხსიერება"
+  },
+  {
+    "id": 6,
+    "slug": "monitors",
+    "nameEn": "Monitors",
+    "nameGe": "მონიტორები"
+  },
+  {
+    "id": 7,
+    "slug": "ups",
+    "nameEn": "Ups",
+    "nameGe": "UPS"
+  },
+  {
+    "id": 8,
+    "slug": "processors",
+    "nameEn": "Processors",
+    "nameGe": "პროცესორები"
+  },
+  {
+    "id": 9,
+    "slug": "networking",
+    "nameEn": "Networking",
+    "nameGe": "ქსელი"
+  },
+  {
+    "id": 10,
+    "slug": "thermal",
+    "nameEn": "Thermal",
+    "nameGe": "თერმოპასტა"
+  },
+  {
+    "id": 11,
+    "slug": "accessories",
+    "nameEn": "Accessories",
+    "nameGe": "აქსესუარები"
+  },
+  {
+    "id": 12,
+    "slug": "keyboards",
+    "nameEn": "Keyboards",
+    "nameGe": "კლავიატურები"
+  },
+  {
+    "id": 13,
+    "slug": "mice",
+    "nameEn": "Mice",
+    "nameGe": "მაუსები"
+  },
+  {
+    "id": 14,
+    "slug": "mousepads",
+    "nameEn": "Mousepads",
+    "nameGe": "მაუსპადები"
+  },
+  {
+    "id": 15,
+    "slug": "notebooks",
+    "nameEn": "Notebooks",
+    "nameGe": "ნოუთბუქები"
+  },
+  {
+    "id": 16,
+    "slug": "audio",
+    "nameEn": "Audio",
+    "nameGe": "აუდიო"
+  }
+]

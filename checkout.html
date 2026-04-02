@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>if(localStorage.getItem('gitec_lang')==='ge')document.documentElement.className='lang-ge';</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Checkout — GITEC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 32px;
+      margin-bottom: 48px;
+      align-items: start;
+    }
+    .checkout-form {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .checkout-form h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-family: var(--font-body);
+      transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .checkout-summary {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: sticky;
+      top: 80px;
+    }
+    .checkout-summary h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .checkout-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    .checkout-item-name {
+      flex: 1;
+      margin-right: 12px;
+    }
+    .checkout-item-qty {
+      color: var(--text-light);
+      margin-right: 12px;
+    }
+    .checkout-divider {
+      border-top: 1px solid var(--border);
+      margin: 16px 0;
+    }
+    .checkout-total-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+    .checkout-total-row.total {
+      font-size: 18px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      padding-top: 12px;
+    }
+    .btn-place-order {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 600;
+      font-family: var(--font-display);
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background .2s;
+    }
+    .btn-place-order:hover {
+      background: var(--accent-hover);
+    }
+    .btn-place-order:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .payment-option:has(input:checked) {
+      border-color: var(--accent);
+      background: rgba(87, 185, 255, 0.05);
+    }
+    .payment-option input {
+      width: auto;
+    }
+    @media (max-width: 768px) {
+      .checkout-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 032 291 34 56</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@gitec.ge</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.facebook.com/gitecltd" target="_blank">Facebook</a>
+        <div class="lang-switch"><a href="#" title="English">🇺🇸</a><a href="#" title="ქართული">🇬🇪</a></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">GI<span>TEC</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+      </div>
+      <div class="header-actions">
+        <a href="login.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Login / Register</span></a>
+        <div class="header-action-sep"></div>
+        <a href="wishlist.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Wishlist</span><span class="count">0</span></a>
+        <div class="header-action-sep"></div>
+        <a href="cart.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg><span>Cart</span><span class="count">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container">
+      <a href="category.html" class="nav-categories-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg> All Categories</a>
+      <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <div class="nav-menu"><button class="mobile-menu-close" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <a href="index.html">Home</a>
+        <a href="category.html#computers">Computers</a>
+        <a href="category.html#pc-components">PC Components</a>
+        <a href="category.html#notebooks">Notebooks</a>
+        <a href="category.html#monitors">Monitors</a>
+        <a href="category.html#audio">Audio</a>
+        <a href="category.html#keyboards-mice">Keyboards/Mice</a>
+        <a href="category.html#accessories">Accessories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <span>/</span> <a href="cart.html">Cart</a> <span>/</span> <span class="current">Checkout</span>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding: 40px 0;">
+    <div class="container">
+      <div class="checkout-layout">
+
+        <div class="checkout-form">
+          <h2>Shipping Information</h2>
+          <form id="checkout-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" name="shippingName" required placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label>Phone *</label>
+                <input type="tel" name="shippingPhone" required placeholder="+995 5XX XXX XXX">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>City *</label>
+              <select name="shippingCity" required>
+                <option value="თბილისი">თბილისი (Tbilisi)</option>
+                <option value="ბათუმი">ბათუმი (Batumi)</option>
+                <option value="ქუთაისი">ქუთაისი (Kutaisi)</option>
+                <option value="რუსთავი">რუსთავი (Rustavi)</option>
+                <option value="ფოთი">ფოთი (Poti)</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Address *</label>
+              <input type="text" name="shippingAddress" required placeholder="Street address">
+            </div>
+            <div class="form-group">
+              <label>Notes (optional)</label>
+              <textarea name="notes" rows="3" placeholder="Delivery instructions, etc."></textarea>
+            </div>
+
+            <h2 style="margin-top: 32px;">Payment Method</h2>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="bog_ipay" checked>
+                <span>Bank of Georgia (iPay)</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="tbc_pay">
+                <span>TBC Pay</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cash_on_delivery">
+                <span>Cash on Delivery</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-place-order">Place Order</button>
+          </form>
+        </div>
+
+        <div class="checkout-summary">
+          <h3>Order Summary</h3>
+          <div id="checkout-items"></div>
+          <div class="checkout-divider"></div>
+          <div class="checkout-total-row">
+            <span>Subtotal</span>
+            <span id="checkout-subtotal">₾ 0</span>
+          </div>
+          <div class="checkout-total-row">
+            <span>Shipping</span>
+            <span id="checkout-shipping">₾ 0</span>
+          </div>
+          <div class="checkout-divider"></div>
+          <div class="checkout-total-row total">
+            <span>Total</span>
+            <span id="checkout-total">₾ 0</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo">GI<span>TEC</span></a>
+          <p>Georgia's go-to destination for computer hardware, gaming systems, and professional tech.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 GITEC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js?v=5"></script>
+  <script>
+  (function() {
+    var API = window.GitecAPI;
+    var CART_KEY = 'gitec_cart';
+
+    // Redirect if not logged in
+    if (API && !API.isLoggedIn()) {
+      window.location.href = 'login.html';
+      return;
+    }
+
+    // Load cart items from localStorage
+    var cart = [];
+    try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e) {}
+
+    if (cart.length === 0) {
+      window.location.href = 'cart.html';
+      return;
+    }
+
+    // Render order summary
+    var itemsEl = document.getElementById('checkout-items');
+    var subtotal = 0;
+    cart.forEach(function(item) {
+      var qty = item.qty || 1;
+      var line = item.price * qty;
+      subtotal += line;
+      var div = document.createElement('div');
+      div.className = 'checkout-item';
+      div.innerHTML = '<span class="checkout-item-name">' + item.name + '</span><span class="checkout-item-qty">x' + qty + '</span><span>₾ ' + line.toLocaleString() + '</span>';
+      itemsEl.appendChild(div);
+    });
+
+    function updateTotals() {
+      var city = document.querySelector('[name="shippingCity"]').value;
+      var shipping = subtotal >= 499 ? 0 : (city === 'თბილისი' ? 6 : 8);
+      document.getElementById('checkout-subtotal').textContent = '₾ ' + subtotal.toLocaleString();
+      document.getElementById('checkout-shipping').textContent = shipping === 0 ? 'Free' : '₾ ' + shipping;
+      document.getElementById('checkout-total').textContent = '₾ ' + (subtotal + shipping).toLocaleString();
+    }
+    updateTotals();
+    document.querySelector('[name="shippingCity"]').addEventListener('change', updateTotals);
+
+    // Pre-fill from user data
+    if (API && API.getCurrentUser()) {
+      var user = API.getCurrentUser();
+      var nameInput = document.querySelector('[name="shippingName"]');
+      if (nameInput && user.fullName) nameInput.value = user.fullName;
+    }
+
+    // Handle form submit
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      var btn = form.querySelector('.btn-place-order');
+      var formData = new FormData(form);
+
+      var orderData = {
+        shippingName: formData.get('shippingName'),
+        shippingAddress: formData.get('shippingAddress'),
+        shippingCity: formData.get('shippingCity'),
+        shippingPhone: formData.get('shippingPhone'),
+        paymentMethod: formData.get('paymentMethod'),
+        notes: formData.get('notes') || ''
+      };
+
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+
+      if (API) {
+        API.createOrder(orderData).then(function(data) {
+          // Clear local cart
+          localStorage.removeItem(CART_KEY);
+          // Show success
+          document.querySelector('.checkout-layout').innerHTML = '<div class="empty-state" style="text-align:center;padding:60px 20px;"><h2>Order #' + data.order.id + ' placed successfully!</h2><p>Thank you for your purchase. You will receive a confirmation email shortly.</p><p style="margin-top:16px;"><a href="index.html" class="hero-btn">Back to Home &rarr;</a></p></div>';
+        }).catch(function(err) {
+          btn.disabled = false;
+          btn.textContent = 'Place Order';
+          alert(err.message || 'Order failed. Please try again.');
+        });
+      }
+    });
+  })();
+  </script>
+
+  <script src="js/config.example.js"></script>
+  <script src="js/chatbot.js?v=6"></script>
+</body>
+</html>

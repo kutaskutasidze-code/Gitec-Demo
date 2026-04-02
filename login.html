@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>if(localStorage.getItem('gitec_lang')==='ge')document.documentElement.className='lang-ge';</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Login / Register — GITEC</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 032 291 34 56</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@gitec.ge</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.facebook.com/gitecltd" target="_blank">Facebook</a>
+        <div class="lang-switch"><a href="#" title="English">🇺🇸</a><a href="#" title="ქართული">🇬🇪</a></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">GI<span>TEC</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+      </div>
+      <div class="header-actions">
+        <a href="login.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Login / Register</span></a>
+        <div class="header-action-sep"></div>
+        <a href="wishlist.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Wishlist</span><span class="count">0</span></a>
+        <div class="header-action-sep"></div>
+        <a href="cart.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg><span>Cart</span><span class="count">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container">
+      <a href="category.html" class="nav-categories-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg> All Categories</a>
+      <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <div class="nav-menu"><button class="mobile-menu-close" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <a href="index.html">Home</a>
+        <a href="category.html#computers">Computers</a>
+        <a href="category.html#pc-components">PC Components</a>
+        <a href="category.html#notebooks">Notebooks</a>
+        <a href="category.html#monitors">Monitors</a>
+        <a href="category.html#audio">Audio</a>
+        <a href="category.html#keyboards-mice">Keyboards/Mice</a>
+        <a href="category.html#accessories">Accessories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    // If already logged in, redirect to account page
+    (function() {
+      var cached = localStorage.getItem('gitec_user');
+      if (cached) {
+        window.location.href = 'account.html';
+      }
+    })();
+  </script>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">&#8250;</span>
+      <span class="current">Login / Register</span>
+    </div>
+
+    <div class="auth-section">
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" onclick="switchTab('login')">Login</button>
+          <button class="auth-tab" onclick="switchTab('register')">Register</button>
+        </div>
+        <div class="auth-body">
+          <!-- Login Panel -->
+          <div class="auth-panel active" id="panel-login">
+            <form class="auth-form" onsubmit="return false;">
+              <div class="form-group">
+                <label for="login-email">Email Address</label>
+                <input type="email" id="login-email" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password">
+              </div>
+              <div class="form-row">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#" onclick="event.preventDefault(); alert('Password reset email sent! (Demo Mode)');">Forgot password?</a>
+              </div>
+              <button class="auth-btn" type="submit">Login</button>
+            </form>
+            <div class="auth-divider">or</div>
+            <div class="auth-footer">Don't have an account? <a href="#" onclick="switchTab('register');return false;">Create one</a></div>
+          </div>
+
+          <!-- Register Panel -->
+          <div class="auth-panel" id="panel-register">
+            <form class="auth-form" onsubmit="return false;">
+              <div class="form-group">
+                <label for="reg-name">Full Name</label>
+                <input type="text" id="reg-name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-email">Email Address</label>
+                <input type="email" id="reg-email" placeholder="you@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-phone">Phone Number</label>
+                <input type="tel" id="reg-phone" placeholder="+995 5XX XXX XXX" required>
+              </div>
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <div style="display:grid;grid-template-columns:1fr 1.5fr 1.2fr;gap:10px;">
+                  <select id="reg-dob-day" required><option value="" disabled selected>Day</option></select>
+                  <select id="reg-dob-month" required><option value="" disabled selected>Month</option></select>
+                  <select id="reg-dob-year" required><option value="" disabled selected>Year</option></select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password" placeholder="Create a password" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-confirm">Confirm Password</label>
+                <input type="password" id="reg-confirm" placeholder="Confirm your password" required>
+              </div>
+              <div class="form-group" style="margin-bottom:20px;">
+                <label style="display:flex;align-items:flex-start;gap:8px;font-size:13px;cursor:pointer;">
+                  <input type="checkbox" id="reg-terms" style="margin-top:3px;width:auto;" required>
+                  <span>ვეთანხმები <a href="privacy.html" target="_blank" style="color:var(--accent);text-decoration:underline;">კონფიდენციალურობის პოლიტიკას</a> და <a href="terms.html" target="_blank" style="color:var(--accent);text-decoration:underline;">წესებსა და პირობებს</a></span>
+                </label>
+              </div>
+              <button class="auth-btn" type="submit">Register</button>
+            </form>
+            <script>
+            (function() {
+              var dayEl = document.getElementById('reg-dob-day');
+              var monthEl = document.getElementById('reg-dob-month');
+              var yearEl = document.getElementById('reg-dob-year');
+              for (var d = 1; d <= 31; d++) dayEl.innerHTML += '<option value="'+d+'">'+d+'</option>';
+              var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+              for (var m = 0; m < 12; m++) monthEl.innerHTML += '<option value="'+(m+1)+'">'+months[m]+'</option>';
+              var now = new Date().getFullYear();
+              for (var y = 2020; y >= 1950; y--) yearEl.innerHTML += '<option value="'+y+'">'+y+'</option>';
+            })();
+            </script>
+            <div class="auth-divider">or</div>
+            <div class="auth-footer">Already have an account? <a href="#" onclick="switchTab('login');return false;">Sign in</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo">GI<span>TEC</span></a>
+          <p>Georgia's go-to destination for computer hardware, gaming systems, and professional tech.</p>
+          <div class="footer-follow-inline">
+            <span>Follow us</span>
+            <a href="https://www.facebook.com/gitecltd" target="_blank" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="terms.html">Conditions of Use</a></li>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+            <li><a href="returns.html">Return Policy</a></li>
+            <li><a href="delivery.html">Shipping Info</a></li>
+            <li><a href="warranty.html">Warranty Info</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="login.html">My Account</a></li>
+            <li><a href="cart.html">Orders</a></li>
+            <li><a href="contact.html">Addresses</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="category.html">Search</a></li>
+            <li><a href="about.html">Blog</a></li>
+            <li><a href="category.html">Recently Viewed</a></li>
+            <li><a href="category.html">Compare Products</a></li>
+            <li><a href="category.html">New Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Sign up for our newsletter</h4>
+        <form class="footer-nl-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email here...">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright &copy; 2026 gITec. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.auth-tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.auth-panel').forEach(function(p) { p.classList.remove('active'); });
+      if (tab === 'login') {
+        document.querySelectorAll('.auth-tab')[0].classList.add('active');
+        document.getElementById('panel-login').classList.add('active');
+      } else {
+        document.querySelectorAll('.auth-tab')[1].classList.add('active');
+        document.getElementById('panel-register').classList.add('active');
+      }
+    }
+  </script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js?v=5"></script>
+  <script src="js/config.js"></script>
+  <script src="js/chatbot.js?v=6"></script>
+</body>
+</html>

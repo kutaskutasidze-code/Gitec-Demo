@@ -1,0 +1,17 @@
+[
+  {
+    "bank": "TeraBank",
+    "swift": "TEGRADE22",
+    "companyId": "205204438"
+  },
+  {
+    "bank": "TBC Bank",
+    "swift": "TBCBGE22",
+    "companyId": "205204438"
+  },
+  {
+    "bank": "Bank of Georgia",
+    "swift": "BAGAGE22",
+    "companyId": "205204438"
+  }
+]

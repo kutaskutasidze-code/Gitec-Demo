@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>if(localStorage.getItem('gitec_lang')==='ge')document.documentElement.className='lang-ge';</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>GiTec Online Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg> 032 291 34 56</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg> info@gitec.ge</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.facebook.com/gitecltd" target="_blank">Facebook</a>
+        <div class="lang-switch">
+          <a href="#" title="English">🇺🇸</a>
+          <a href="#" title="ქართული">🇬🇪</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">GI<span>TEC</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg></button>
+      </div>
+      <div class="header-actions">
+        <a href="login.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg><span>Login / Register</span></a>
+        <div class="header-action-sep"></div>
+        <a href="wishlist.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg><span>Wishlist</span><span class="count">0</span></a>
+        <div class="header-action-sep"></div>
+        <a href="cart.html" class="header-action"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+          </svg><span>Cart</span><span class="count">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <a href="category.html" class="nav-categories-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="7" height="7" x="3" y="3" rx="1" />
+          <rect width="7" height="7" x="14" y="3" rx="1" />
+          <rect width="7" height="7" x="14" y="14" rx="1" />
+          <rect width="7" height="7" x="3" y="14" rx="1" />
+        </svg> All Categories</a>
+      <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <div class="nav-menu"><button class="mobile-menu-close" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <a href="index.html" class="active">Home</a>
+        <a href="category.html#computers">Computers</a>
+        <a href="category.html#pc-components">PC Components</a>
+        <a href="category.html#notebooks">Notebooks</a>
+        <a href="category.html#monitors">Monitors</a>
+        <a href="category.html#audio">Audio</a>
+        <a href="category.html#keyboards-mice">Keyboards/Mice</a>
+        <a href="category.html#accessories">Accessories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SLIDER -->
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide" style="background-image:url('https://gitec.ge/images/thumbs/0072416_nvidia-app-key-visual_800.jpeg')">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-tag">New Arrival</span>
+            <h1>RTX 50 Series Now Available in Georgia</h1>
+            <p>Next-gen performance for gaming, streaming, and AI workloads. Pre-built systems and standalone cards in stock.</p>
+            <a href="category.html" class="hero-btn">Shop Now &#8594;</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" style="background-image:url('https://gitec.ge/images/thumbs/0072420_-kv-3840x2160-cta (5)_800.jpeg')">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-tag">Gaming PCs</span>
+            <h1>Custom Gaming Rigs Built to Dominate</h1>
+            <p>Hand-assembled systems with premium components. Backed by local warranty and technical support.</p>
+            <a href="category.html" class="hero-btn">Explore Builds &#8594;</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" style="background-image:url('https://gitec.ge/images/thumbs/0072307_DLSS Weekly 4.30 Update Image_800.jpeg')">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-tag">Thermal Grizzly</span>
+            <h1>Keep Your System Cool Under Pressure</h1>
+            <p>Premium thermal solutions from Thermal Grizzly. Paste, pads, and direct-die kits for enthusiast builders.</p>
+            <a href="category.html" class="hero-btn">Shop Cooling &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-arrows">
+      <button class="hero-arrow prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="hero-arrow next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="hero-dots">
+      <span class="hero-dot active"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Shop by Category</h2>
+        <a href="category.html" class="section-link">View All &#8594;</a>
+      </div>
+      <div class="categories-grid">
+        <a href="category.html" class="category-card">
+          <div class="category-icon"><img src="https://gitec.ge/images/thumbs/0073204_gaming-computers_420.jpeg"
+              alt="Computers"></div>
+          <h3>Computers</h3><span>42 products</span>
+        </a>
+        <a href="category.html" class="category-card">
+          <div class="category-icon"><img src="https://gitec.ge/images/thumbs/0077391_components_420.png"
+              alt="Components"></div>
+          <h3>PC Components</h3><span>315 products</span>
+        </a>
+        <a href="category.html" class="category-card">
+          <div class="category-icon"><img src="https://gitec.ge/images/thumbs/0073345_monitors_420.jpeg" alt="Monitors">
+          </div>
+          <h3>Monitors</h3><span>68 products</span>
+        </a>
+        <a href="category.html" class="category-card">
+          <div class="category-icon"><img src="https://gitec.ge/images/thumbs/0067068_logitech_360.jpeg" alt="Audio">
+          </div>
+          <h3>Audio</h3><span>94 products</span>
+        </a>
+        <a href="category.html" class="category-card">
+          <div class="category-icon"><img src="https://gitec.ge/images/thumbs/0073283_notebook_420.jpeg"
+              alt="Peripherals"></div>
+          <h3>Peripherals</h3><span>127 products</span>
+        </a>
+        <a href="category.html" class="category-card">
+          <div class="category-icon"><img src="https://gitec.ge/images/thumbs/0066935_arctic_360.jpeg" alt="Networking">
+          </div>
+          <h3>Networking</h3><span>53 products</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section" style="background:var(--bg-gray)">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Products</h2>
+        <a href="category.html" class="section-link">View All &#8594;</a>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card" data-product-id="3">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=3">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079335_ne75080s19t2-gb2031a_360.jpeg"
+                alt="RTX 5080"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Graphics Cards</div>
+            <div class="product-title"><a href="product.html?id=3">Palit RTX5080 GamingPro OC 16GB</a></div>
+            <div class="product-price"><span class="current">&#8382; 4,750</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-product-id="4">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=4">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079464_11348-03-20g_360.jpeg"
+                alt="RX 9070 XT"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Graphics Cards</div>
+            <div class="product-title"><a href="product.html?id=4">Sapphire PULSE AMD Radeon RX 9070 XT 16GB</a></div>
+            <div class="product-price"><span class="current">&#8382; 3,200</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-product-id="30">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=30">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079295_ultra-245kf-box_360.jpeg"
+                alt="Intel Core Ultra 5"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Processors</div>
+            <div class="product-title"><a href="product.html?id=30">Intel Core Ultra 5 245KF Box LGA1851</a></div>
+            <div class="product-price"><span class="current">&#8382; 750</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-product-id="14">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=14">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0076038_g89ghslcd36sb00_360.jpeg"
+                alt="Lian Li Hydroshift"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Cooling</div>
+            <div class="product-title"><a href="product.html?id=14">Lian Li Hydroshift LCD AIO Black</a></div>
+            <div class="product-price"><span class="current">&#8382; 495</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-product-id="21">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=21">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079289_ms-icraft-z890-pacific_360.jpeg"
+                alt="Maxsun iCraft Z890"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Motherboards</div>
+            <div class="product-title"><a href="product.html?id=21">Maxsun iCraft Z890 Pacific DDR5 ATX</a></div>
+            <div class="product-price"><span class="current">&#8382; 960</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-product-id="27">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=27">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079486_68c8gac3au_360.jpeg"
+                alt="Lenovo Monitor"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Monitors</div>
+            <div class="product-title"><a href="product.html?id=27">Lenovo L27QE 27" IPS 2K QHD 100Hz</a></div>
+            <div class="product-price"><span class="current">&#8382; 490</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-product-id="29">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=29">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079481_bx1600mi-gr_360.jpeg"
+                alt="APC Back-UPS"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">UPS</div>
+            <div class="product-title"><a href="product.html?id=29">APC Back-UPS BX1600MI-GR 1600VA 900W</a></div>
+            <div class="product-price"><span class="current">&#8382; 680</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-product-id="34">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5" />
+                <path d="M8 3H3v5" />
+                <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+                <path d="m15 9 6-6" />
+              </svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></button>
+          </div>
+          <a href="product.html?id=34">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0077178_tg-k-030-r_360.jpeg"
+                alt="Thermal Grizzly Kryonaut"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Thermal</div>
+            <div class="product-title"><a href="product.html?id=34">Thermal Grizzly Kryonaut 11g</a></div>
+            <div class="product-price"><span class="current">&#8382; 110</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">New Arrivals</h2>
+        <a href="category.html" class="section-link">View All &#8594;</a>
+      </div>
+      <div class="products-grid">
+        <div class="product-card" data-product-id="2">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <a href="product.html?id=2">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0077606_ne7507t019t2-gb2031u_360.png"
+                alt="Palit RTX5070Ti GamingPro-S"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Graphics Cards</div>
+            <div class="product-title"><a href="product.html?id=2">Palit RTX5070Ti GamingPro-S</a></div>
+            <div class="product-price"><span class="current">&#8382; 3,295</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card" data-product-id="15">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <a href="product.html?id=15">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079369_acfre00184a_360.jpeg"
+                alt="Arctic Liquid Freezer III Pro 360"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Cooling</div>
+            <div class="product-title"><a href="product.html?id=15">Arctic Liquid Freezer III Pro 360 A-RGB</a></div>
+            <div class="product-price"><span class="current">&#8382; 385</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card" data-product-id="26">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <a href="product.html?id=26">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079485_kf556c36bbek2-64_360.jpeg"
+                alt="Kingston Fury Beast"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Memory</div>
+            <div class="product-title"><a href="product.html?id=26">Kingston Fury Beast Black 64GB 5600MHz CL36</a></div>
+            <div class="product-price"><span class="current">&#8382; 2,900</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card" data-product-id="31">
+          <div class="product-actions">
+            <button class="product-action-btn" title="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <button class="product-action-btn" title="Compare"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg></button>
+            <button class="product-action-btn" title="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <a href="product.html?id=31">
+            <div class="product-img"><img src="https://gitec.ge/images/thumbs/0079495_mr200_360.jpeg"
+                alt="TP-Link ARCHER MR200"></div>
+          </a>
+          <div class="product-info">
+            <div class="product-category">Networking</div>
+            <div class="product-title"><a href="product.html?id=31">TP-Link ARCHER MR200 AC750 4G Router</a></div>
+            <div class="product-price"><span class="current">&#8382; 175</span></div>
+            <div class="product-stock">In Stock</div>
+            <button class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="section brands-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Brands</h2>
+      </div>
+      <div class="brands-grid">
+        <a href="category.html?brand=lianli" class="brand-item"><img src="https://gitec.ge/images/thumbs/0070386_lian-li_360.jpeg" alt="Lian Li"></a>
+        <a href="category.html?brand=palit" class="brand-item"><img src="https://gitec.ge/images/thumbs/0037439_palit_360.jpeg" alt="Palit"></a>
+        <a href="category.html?brand=arctic" class="brand-item"><img src="https://gitec.ge/images/thumbs/0066935_arctic_360.jpeg" alt="Arctic"></a>
+        <a href="category.html?brand=thermalgrizzly" class="brand-item"><img src="https://gitec.ge/images/thumbs/0076811_thermal-grizzly_360.jpeg" alt="Thermal Grizzly"></a>
+        <a href="category.html?brand=maxsun" class="brand-item"><span class="brand-text">Maxsun</span></a>
+        <a href="category.html?brand=gigabyte" class="brand-item"><span class="brand-text">Gigabyte</span></a>
+        <a href="category.html?brand=sapphire" class="brand-item"><span class="brand-text">Sapphire</span></a>
+        <a href="category.html?brand=biostar" class="brand-item"><span class="brand-text">Biostar</span></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg></div>
+          <div class="feature-text">
+            <h4>Fast Delivery</h4>
+            <p>Free shipping on orders over 200&#8382;</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg></div>
+          <div class="feature-text">
+            <h4>Secure Payment</h4>
+            <p>Card, bank transfer, installments</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="1 4 1 10 7 10" />
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+            </svg></div>
+          <div class="feature-text">
+            <h4>Easy Returns</h4>
+            <p>14-day return policy</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></div>
+          <div class="feature-text">
+            <h4>Expert Support</h4>
+            <p>Tech team available daily</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENTLY VIEWED -->
+  <section class="recently-viewed" id="recently-viewed" style="display:none">
+    <div class="container">
+      <h2 class="section-title">Recently Viewed</h2>
+      <div class="recently-scroll"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo">GI<span>TEC</span></a>
+          <p>Georgia's go-to destination for computer hardware, gaming systems, and professional tech.</p>
+          <div class="footer-follow-inline">
+            <span>Follow us</span>
+            <a href="https://www.facebook.com/gitecltd" target="_blank" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="terms.html">Conditions of Use</a></li>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+            <li><a href="returns.html">Return Policy</a></li>
+            <li><a href="delivery.html">Shipping Info</a></li>
+            <li><a href="warranty.html">Warranty Info</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="login.html">My Account</a></li>
+            <li><a href="cart.html">Orders</a></li>
+            <li><a href="contact.html">Addresses</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="category.html">Search</a></li>
+            <li><a href="about.html">Blog</a></li>
+            <li><a href="category.html">Recently Viewed</a></li>
+            <li><a href="category.html">Compare Products</a></li>
+            <li><a href="category.html">New Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Sign up for our newsletter</h4>
+        <form class="footer-nl-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email here...">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright &copy; 2026 gITec. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js?v=5"></script>
+  <script src="js/config.js"></script>
+  <script src="js/chatbot.js?v=6"></script>
+</body>
+
+</html>
