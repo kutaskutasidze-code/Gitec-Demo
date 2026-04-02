@@ -2,14 +2,7 @@
   'use strict';
 
   // ========== CONFIG ==========
-  var cfg = window.GITEC_CONFIG || {};
-  var GEMINI_API_KEY = cfg.GEMINI_API_KEY || '';
-  var GEMINI_MODELS = ['gemini-2.5-pro', 'gemini-2.5-flash'];
-  var API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models/';
-
-  var GROQ_API_KEY = cfg.GROQ_API_KEY || '';
-  var GROQ_MODEL = 'llama-3.3-70b-versatile';
-  var GROQ_BASE = 'https://api.groq.com/openai/v1/chat/completions';
+  var CHAT_API_URL = '/api/chat';
 
   // ========== STATE ==========
   var isOpen = false;
@@ -427,20 +420,12 @@
     // Step 4: Show typing indicator
     appendMessage('bot', '...', true);
 
-    // Step 5: Call API chain
-    var geminiOk = GEMINI_API_KEY && GEMINI_API_KEY !== 'PUT API KEY HERE' && GEMINI_API_KEY !== 'YOUR_API_KEY_HERE';
-    var groqOk = GROQ_API_KEY && GROQ_API_KEY !== 'PUT API KEY HERE' && GROQ_API_KEY !== 'YOUR_API_KEY_HERE';
-
-    var chain;
-    if (geminiOk) {
-      chain = callGemini(contextualPrompt);
-      if (groqOk) chain = chain.catch(function (err) { console.warn('Gemini failed, trying Groq:', err.message); return callGroq(contextualPrompt); });
-      chain = chain.catch(function (err) { console.warn('API failed, using local search:', err.message); return formatLocalReply(search); });
-    } else if (groqOk) {
-      chain = callGroq(contextualPrompt).catch(function (err) { console.warn('Groq failed, using local search:', err.message); return formatLocalReply(search); });
-    } else {
-      chain = Promise.resolve(formatLocalReply(search));
-    }
+    // Step 5: Call server proxy (keys stay server-side)
+    var chain = callChatProxy(contextualPrompt)
+      .catch(function (err) {
+        console.warn('API proxy failed, using local search:', err.message);
+        return formatLocalReply(search);
+      });
 
     chain.then(function (reply) {
       removeTyping();
@@ -575,80 +560,23 @@
       .replace(/\n/g, '<br>');
   }
 
-  // ========== CALL GEMINI API ==========
-  function callGemini(contextualPrompt) {
-    var body = {
-      contents: messages,
-      systemInstruction: {
-        parts: [{ text: contextualPrompt }]
-      },
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 4096
-      }
-    };
-
-    function tryModel(index) {
-      if (index >= GEMINI_MODELS.length) {
-        return Promise.reject(new Error('All models failed'));
-      }
-      var url = API_BASE + GEMINI_MODELS[index] + ':generateContent?key=' + GEMINI_API_KEY;
-      return fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      })
-        .then(function (res) {
-          if (!res.ok) throw new Error('API returned ' + res.status);
-          return res.json();
-        })
-        .then(function (data) {
-          if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-            return data.candidates[0].content.parts[0].text;
-          }
-          throw new Error('No response from API');
-        })
-        .catch(function (err) {
-          console.warn(GEMINI_MODELS[index] + ' failed:', err.message);
-          return tryModel(index + 1);
-        });
-    }
-
-    return tryModel(0);
-  }
-
-  // ========== CALL GROQ API (FALLBACK 1) ==========
-  function callGroq(contextualPrompt) {
-    var groqMessages = [{ role: 'system', content: contextualPrompt }];
-    for (var i = 0; i < messages.length; i++) {
-      groqMessages.push({
-        role: messages[i].role === 'model' ? 'assistant' : 'user',
-        content: messages[i].parts[0].text
-      });
-    }
-
-    return fetch(GROQ_BASE, {
+  // ========== CALL SERVER PROXY ==========
+  function callChatProxy(contextualPrompt) {
+    return fetch(CHAT_API_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + GROQ_API_KEY
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: GROQ_MODEL,
-        messages: groqMessages,
-        temperature: 0.7,
-        max_tokens: 1024
+        messages: messages,
+        systemPrompt: contextualPrompt
       })
     })
       .then(function (res) {
-        if (!res.ok) throw new Error('Groq API returned ' + res.status);
+        if (!res.ok) throw new Error('Chat proxy returned ' + res.status);
         return res.json();
       })
       .then(function (data) {
-        if (data.choices && data.choices[0] && data.choices[0].message) {
-          return data.choices[0].message.content;
-        }
-        throw new Error('No response from Groq');
+        if (data.text) return data.text;
+        throw new Error(data.error || 'No response from server');
       });
   }
 
